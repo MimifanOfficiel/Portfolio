@@ -1,0 +1,54 @@
+image: docker:20.10.16
+
+services:
+  - docker:20.10.16-dind
+
+stages:
+  - build
+  - deploy
+
+variables:
+  APACHE_DOCUMENT_ROOT: /var/www/html
+  IMAGE_NAME: registry.gitlab.com/mimifanofficiel/portfolio
+  DOCKER_DRIVER: overlay2
+  
+
+build_image:
+  retry:
+    max: 2
+    when:
+      - script_failure
+  stage: build
+  image: docker:edge-git  
+  services:
+    - docker:dind
+  before_script:
+    - apk update
+    - apk add curl
+    - echo "$CI_PORTFOLIO_ACCESSTOKEN" | docker login $CI_REGISTRY_DOMAIN -u "$CI_REGISTRY_USER" --password-stdin
+  script:
+    - docker info
+    - docker build -t $CI_REGISTRY_DOMAIN .
+    - docker push $CI_REGISTRY_DOMAIN
+  only:
+    - main
+ 
+
+deploy-image:
+  stage: deploy
+  script:
+    - mkdir -p ~/.ssh
+    - echo "$SSH_PRIVATE_KEY" | tr -d '\r' > ~/.ssh/id_rsa
+    - chmod 600 ~/.ssh/id_rsa
+
+    # Ajouter le serveur VPS dans les known_hosts pour éviter les confirmations SSH
+    - ssh-keyscan -H $VPS_HOST >> ~/.ssh/known_hosts
+
+    # Se connecter au VPS et exécuter les commandes Docker pour le déploiement
+    - ssh root@$VPS_HOST "
+        docker pull $IMAGE_NAME:$CI_COMMIT_SHA &&
+        docker stop portfolio || true &&
+        docker rm portfolio || true &&
+        docker run -d -p 80:80 -p 443:443 --name portfolio $IMAGE_NAME:$CI_COMMIT_SHA"
+  only:
+    - main
