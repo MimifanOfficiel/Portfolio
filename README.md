@@ -11,7 +11,7 @@ Vous y retrouverez ici :
  - Mes projets
  - Mes coordonnées
  - Un formulaire de contact
- 
+
 
 ## Les technologies utilisées sont :
 - React
