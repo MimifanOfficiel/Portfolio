@@ -15,7 +15,7 @@ export function Hero() {
 	let localDate:Date = new Date(date.getTime() - date.getTimezoneOffset() * 60000)
 	const currentTime = localDate.getHours();
 
-	let greeting = "Hello";
+	let greeting = "Bonjour";
 	if (currentTime < 18) {
 		greeting = "Bonjour";
 	} else if (currentTime >= 18 && currentTime < 24) {
@@ -30,15 +30,15 @@ export function Hero() {
 	return (
 		<Container id="home">
 			<div className="hero-text">
-				<ScrollAnimation animateIn="fadeInUp"> <p>{greeting} <img src={Hello} alt="Hello" width="20px"/>, Je suis</p> </ScrollAnimation>
+				<ScrollAnimation animateIn="fadeInUp"> <p>{greeting} <img src={Hello} alt="Bonjour" width="20px"/>, Je suis</p> </ScrollAnimation>
 
 				<ScrollAnimation animateIn="fadeInUp" delay={0.2 * 1000}> <h1>Lila BRANDON</h1> </ScrollAnimation>
 
 				<ScrollAnimation animateIn="fadeInUp" delay={0.4 * 1000}> <h3>Développeuse Full Stack</h3> </ScrollAnimation>
 
-				<ScrollAnimation animateIn="fadeInUp" delay={0.6 * 1000}> <p className="small-resume">{yearsSince2017} Years of Experience</p> </ScrollAnimation>
+				<ScrollAnimation animateIn="fadeInUp" delay={0.6 * 1000}> <p className="small-resume">{yearsSince2017} années d'expérience</p> </ScrollAnimation>
 				
-				<ScrollAnimation animateIn="fadeInUp" delay={0.8 * 1000}>	
+				<ScrollAnimation animateIn="fadeInUp" delay={0.8 * 1000}>
 					<BrowserRouter>
 						<NavHashLink smooth to="#contact" className="button">Me contacter</NavHashLink>
 					</BrowserRouter>

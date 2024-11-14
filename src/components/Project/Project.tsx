@@ -16,22 +16,19 @@ export function Project() {
 				<header>
 					<svg width="50" xmlns="http://www.w3.org/2000/svg" role="img" viewBox="0 0 24 24" fill="none" stroke="#23ce6b" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round"> <title>Folder</title> <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path> </svg>
 					<div className="project-links">
-						<a href="https://github.com/CodeVinayak/Serverless-Voting-Application" target="_blank" rel="noreferrer">
-							<img src={githubIcon} alt="Visit site" /></a>
-						<a href="https://vote.vinayaksingh.com" target="_blank" rel="noreferrer">
-							<img src={externalLink} alt="Visit site" />
-						</a> 
+						<a href="https://github.com/MimifanOfficiel/HelpMeOS" target="_blank" rel="noreferrer">
+							<img src={githubIcon} alt="Visiter le dépôt github" /></a>
 					</div>
 				</header>
 				<div className="body">
-					<h3>Serverless Voting Application for Programming Languages</h3>
-					<p> Developed a serverless voting app using React, AWS Lambda, API Gateway, and DynamoDB, enabling users to view programming languages, cast votes, and access details through an interactive UI, leveraging serverless architecture for scalability and cost-efficiency. </p>
+					<h3>HelpMe OS : Un système d'exploitation simple</h3>
+					<p> Développé en C avec le bootloader <a href="https://limine-bootloader.org/">limine</a> à des fins éducatives, stockage de fichiers, exécution de commandes en terminal, et plus... </p>
 				</div>
 				<footer> 
 					<ul className="tech-list"> 
-						<li>AWS Lambda</li> 
-						<li>API Gateway</li> 
-						<li>DynamoDB</li> 
+						<li>C</li> 
+						<li>ASM</li> 
+						<li>FAT</li> 
 					</ul>
 				</footer>
 			</div>
@@ -42,25 +39,21 @@ export function Project() {
 				<header>
 					<svg width="50" xmlns="http://www.w3.org/2000/svg" role="img" viewBox="0 0 24 24" fill="none" stroke="#23ce6b " strokeWidth="1" strokeLinecap="round" strokeLinejoin="round"><title>Folder</title> <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path> </svg>
 					<div className="project-links">
-						<a href="https://github.com/CodeVinayak/AI-Chatbot-Assistant" target="_blank" rel="noreferrer">
-							<img src={githubIcon} alt="Visit site" />
-						</a>
-						<a href="https://ai-chatbot-t8fn.onrender.com" target="_blank" rel="noreferrer">
-							<img src={externalLink} alt="Visit site" />
+						<a href="https://gitlab.lilabrandon.fr/Mimifan/bitlockerunlocker" target="_blank" rel="noreferrer">
+							<img src={githubIcon} alt="Visiter le dépôt gitlab" />
 						</a>
 					</div>
 				</header>
 				<div className="body">
-					<h3>GeniusBot: AI-Powered Assistance with PDF Insight</h3>
-					<p>
-					Developed an interactive chatbot application using Streamlit, OpenAI's GPT-3.5-turbo language model, and PyPDF2 for PDF text extraction, enabling users to ask context-based questions on uploaded PDFs and general queries.
+					<h3>BitLocker Unlocker : Un programme C++ simple</h3>
+					<p>Un simple programme C++ qui permet d'afficher le statut du bitlocker sur les ordinateurs Windows Pro, ou même de l'enlever.
+						<br></br>Programmé afin de gagner du temps lors de la réinitialisation d'un ordinateur ou de la sauvegarde en faisant une image (i.e. R Drive)
 					</p>
 				</div>
 				<footer>
 					<ul className="tech-list">
-						<li>Streamlit</li>
-						<li>PyPDF2</li>
-						<li>LangChain</li>
+						<li>C++</li>
+						<li>MakeFile</li>
 					</ul>
 				</footer>
 			</div>
@@ -74,25 +67,27 @@ export function Project() {
 					<path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path>
 				</svg>
 				<div className="project-links">
-					<a href="https://github.com/CodeVinayak/Jupyter-Notebook/tree/main/Credit%20Risk%20Analysis" target="\_blank" rel="noreferrer">
-						<img src={githubIcon} alt="Visit site" />
+					<a href="https://gitlab.lilabrandon.fr/Mimifan/jumpinsky3d#" target="\_blank" rel="noreferrer">
+						<img src={githubIcon} alt="Visiter le dépôt gitlab" />
 					</a>
-					<a href="https://github.com/CodeVinayak/Jupyter-Notebook/blob/main/Credit%20Risk%20Analysis/Credit_Risk_Analysis.ipynb" target="\_blank" rel="noreferrer">
-						<img src={externalLink} alt="Visit site" />
+					<a href="https://jumpinsky.lilabrandon.fr" target="\_blank" rel="noreferrer">
+						<img src={externalLink} alt="Jouer au jeu" />
 					</a>
 				</div>
 			</header>
 			<div className="body">
-				<h3>Credit Risk Analysis Project</h3>
+				<h3>JumpinSky3D : Un jeu de plateformes sur web</h3>
 				<p>
-				Developed a highly accurate credit risk classification model using XGBoost, achieving 100% precision, recall, and F1-scores for predicting loan defaults.Implemented rigorous data preprocessing, feature engineering, and hyperparameter tuning on imbalanced credit risk data, employing ensemble methods, cross-validation, and model interpretation techniques.
+				Développé avec React et ThreeJS, JumpinSky3D est un jeu de plateformes en 3D où le joueur doit sauter de plateforme en plateforme pour atteindre le sommet.<br></br>
+				Plusieurs niveaux, des statistiques et une API Rest pour gérer le tout.
 				</p>
 			</div>
 			<footer>
 				<ul className="tech-list">
-					<li>XGBoost</li>
-					<li>Pandas</li>
-					<li>Matplotlib</li>
+					<li>React</li>
+					<li>ThreeJS</li>
+					<li>Node</li>
+					<li>Express</li>
 				</ul>
 			</footer>
 		</div>

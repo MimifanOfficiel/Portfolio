@@ -1,29 +1,23 @@
-# Étape 1 : Build de l'application React
-FROM node:18 AS build
+# Installer une version spécifique de Node.js (par exemple v18)
+FROM node:18
 
+# Créer le répertoire de travail et installer les dépendances
 WORKDIR /app
 
-# Copier les fichiers de dépendances
+# Copier les fichiers de configuration
 COPY package*.json ./
-RUN npm install
+
+# Installer les dépendances
+RUN yarn install
 
 # Copier le reste de l'application
 COPY . .
 
-# Générer le build de l'application React
-RUN npm run build
+# Construire l'application
+RUN yarn build
 
-# Étape 2 : Servir avec Caddy
-FROM caddy:alpine
+# Exposer le port 3000
+EXPOSE 3000
 
-# Copier le build de React dans le répertoire de Caddy
-COPY --from=build /app/build /usr/share/caddy
-
-# Copier le fichier de configuration Caddy
-COPY Caddyfile /etc/caddy/Caddyfile
-
-# Exposer le port 80 pour HTTP et 443 pour HTTPS
-EXPOSE 80 443
-
-# Démarrer Caddy
-CMD ["caddy", "run", "--config", "/etc/caddy/Caddyfile"]
+# Démarrer le serveur
+CMD ["yarn", "run", "start"]
